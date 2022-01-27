@@ -262,35 +262,7 @@
             let string29 = '';
             let string30 = '';
 
-            // Two Format
             
-            // first format
-            // for (let i = 0; i < n; i++) { // external loop
-            //     // printing star
-            //     for (let j = 0; j < n; j++) { // internal loop
-            //         string1 += '&nbsp; * &nbsp;';
-            //     }
-            //     string1 += '<br>'; // newline after each row
-            // }
-
-
-
-            // second format
-            // for (let i = 1; i <= n; i++) { // external loop
-            //     // printing star
-            //     for (let j = 1; j <= n; j++) { // internal loop
-            //         string1 += '&nbsp; * &nbsp;';
-            //     }
-            //     string1 += '<br>'; // newline after each row
-            // }
-
-
-
-
-            // outer loop - rows (same in almost every case)
-            // inner loop - columns (varies)
-
-
             // Square (1 to n || 1 to n)
             for (let i = 1; i <= n; i++) { // external loop
                 // printing star
@@ -310,14 +282,14 @@
                     if(i === 1 || i === n) {
                         string2 += '&nbsp; * &nbsp;';
                     }
-                    // else {
-                    //     if(j === 1 || j === n) {
-                    //         string2 += '&nbsp; * &nbsp;';
-                    //     }
-                    //     else {
-                    //         string2 += '&emsp;&ensp;';
-                    //     }
-                    // }
+                    else {
+                        if(j === 1 || j === n) {
+                            string2 += '&nbsp; * &nbsp;';
+                        }
+                        else {
+                            string2 += '&emsp;&ensp;';
+                        }
+                    }
                 }
                 string2 += '<br>';
             }
@@ -357,10 +329,6 @@
             }
             pattern4.innerHTML = string4;
 
-
-
-            // outer loop - rows (i) (same in almost every case)
-            // inner loop - columns (j/k) (varies)
 
             // Inc Triangle  (1 to n || 1 to i)
             for (let i = 1; i <= n; i++) {
@@ -590,50 +558,6 @@
                 string14 += "<br>";  // newline after each row
             }
             pattern14.innerHTML = string14;
-
-
-
-            // Butterfly Pattern
-                // 2 Triangle
-            // 1. 1 Left Pascal Triangle of star
-            // 2. 2 Right Pascal Triangle of star
-            // for (let i = 1; i < p; i++) {
-            //     // priptipg star
-            //     for (let j = 1; j <= i; j++) {
-            //         string15 += "&nbsp; * &nbsp;";
-            //     }
-            //     string15 += "<br>";
-            // }
-            // for (let i = 1; i <= p; i++) {
-            //     // printing star
-            //     for (let j = i; j <= p; j++) {
-            //         string15 += "&nbsp; * &nbsp;";
-            //     }
-            //     string15 += "<br>";
-            // }
-            // for (let i = 1; i < p; i++) {
-            //     // printing space
-            //     for (let j = i; j < p; j++) {
-            //         string15 += "&nbsp; &ensp; &nbsp;";
-            //     }
-            //     // printing star
-            //     for (let k = 1; k <= i; k++) {
-            //         string15 += "&nbsp; * &nbsp;";
-            //     }
-            //     string15 += "<br>";  // newline after each row
-            // }
-            // for (let i = 1; i <= p; i++) {
-            //     // printing space
-            //     for (let j = 1; j < i; j++) {
-            //         string15 += "&nbsp; &ensp; &nbsp;";
-            //     }
-            //     // printing star
-            //     for (let k = i; k <= p; k++) {
-            //         string15 += "&nbsp; * &nbsp;";
-            //     }
-            //     string15 += "<br>";  // newline after each row
-            // }
-            // pattern15.innerHTML = string15;
 
 
 
