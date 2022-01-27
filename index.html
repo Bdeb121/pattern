@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Star Pattern</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap');
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                user-select: none;
+            }
+            body {
+                background: #f1f3ff;
+                font-family: 'Nunito', sans-serif;
+            }
+            .container {
+                display: grid;
+                grid-template: '1fr 1fr 1fr 1fr';
+                padding: 16px;
+                grid-gap: 20px 20px;
+            }
+            .card {
+                position: relative;
+                background: #ffffff;
+                border-radius: 12px;
+                padding: 20px 20px 40px;
+                display: flex;
+                flex-direction: column;
+                transition: all 0.4s ease-in-out;
+                box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.25);
+            }
+            .header{
+                font-size: 20px;
+                font-weight: 700;
+                padding-bottom: 16px;
+            }
+            .pattern{
+                margin: 0 auto;
+                padding-top: 10px;
+                font-size: 32px;
+                border: 2px solid #333;
+                border-radius: 12px;
+            }
+
+            @media (max-width: 1200px) {
+                .container {
+                    grid-template: '1fr 1fr 1fr';
+                }
+            }
+
+            @media (max-width: 800px) {
+                .container {
+                    grid-template: '1fr 1fr';
+                }
+            }
+
+            @media (max-width: 500px) {
+                .container {
+                    grid-template: '1fr';
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Square -->
+            <div class="card">
+                <div class="header">1. Square Pattern</div>
+                <div class="pattern pattern1"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">2. Hollow Square Pattern</div>
+                <div class="pattern pattern2"></div>
+            </div>
+
+            <!-- Rectangular -->
+            <div class="card">
+                <div class="header">3. Rectangular Pattern</div>
+                <div class="pattern pattern3"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">4. Hollow Rectangular Pattern</div>
+                <div class="pattern pattern4"></div>
+            </div>
+
+            <!-- Triangular -->
+            <div class="card">
+                <div class="header">5. Increasing Triangle Pattern</div>
+                <div class="pattern pattern5"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">6. Decreasing Triangle Pattern</div>
+                <div class="pattern pattern6"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">7. Right Triangle Pattern</div>
+                <div class="pattern pattern7"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">8. Left Triangle Pattern</div>
+                <div class="pattern pattern8"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">9. Upright Pyramid Pattern</div>
+                <div class="pattern pattern9"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">10. Inverted Pyramid Pattern</div>
+                <div class="pattern pattern10"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">11. Diamond Pattern one</div>
+                <div class="pattern pattern11"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">12. Hour Glass Pattern</div>
+                <div class="pattern pattern12"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">13. Left Pascal Triangle</div>
+                <div class="pattern pattern13"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">14. Right Pascal Triangle</div>
+                <div class="pattern pattern14"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">15. Butterfly Pattern</div>
+                <div class="pattern pattern15"></div>
+            </div>
+
+             <div class="card">
+                <div class="header">16. Diamond Pattern two</div>
+                <div class="pattern pattern16"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">17. Double Upright Pyramid</div>
+                <div class="pattern pattern17"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">18. Double Inverted Pyramid</div>
+                <div class="pattern pattern18"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">19. Pattern one</div>
+                <div class="pattern pattern19"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">20. Pattern two</div>
+                <div class="pattern pattern20"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">21. Pattern 1</div>
+                <div class="pattern pattern21"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">22. Pattern 2</div>
+                <div class="pattern pattern22"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">23. Pattern 3</div>
+                <div class="pattern pattern23"></div>
+            </div>
+
+            <div class="card">
+                <div class="header">24. Pattern 4</div>
+                <div class="pattern pattern24"></div>
+            </div>
+
+            
+        </div>
+
+        <script>
+            let pattern1 = document.querySelector('.pattern1');
+            let pattern2 = document.querySelector('.pattern2');
+            let pattern3 = document.querySelector('.pattern3');
+            let pattern4 = document.querySelector('.pattern4');
+            let pattern5 = document.querySelector('.pattern5');
+            let pattern6 = document.querySelector('.pattern6');
+            let pattern7 = document.querySelector('.pattern7');
+            let pattern8 = document.querySelector('.pattern8');
+            let pattern9 = document.querySelector('.pattern9');
+            let pattern10 = document.querySelector('.pattern10');
+            let pattern11 = document.querySelector('.pattern11');
+            let pattern12 = document.querySelector('.pattern12');
+            let pattern13 = document.querySelector('.pattern13');
+            let pattern14 = document.querySelector('.pattern14');
+            let pattern15 = document.querySelector('.pattern15');
+            let pattern16 = document.querySelector('.pattern16');
+            let pattern17 = document.querySelector('.pattern17');
+            let pattern18 = document.querySelector('.pattern18');
+            let pattern19 = document.querySelector('.pattern19');
+            let pattern20 = document.querySelector('.pattern20');
+            let pattern21 = document.querySelector('.pattern21');
+            let pattern22 = document.querySelector('.pattern22');
+            let pattern23 = document.querySelector('.pattern23');
+            let pattern24 = document.querySelector('.pattern24');
+            let pattern25 = document.querySelector('.pattern25');
+            let pattern26 = document.querySelector('.pattern26');
+            let pattern27 = document.querySelector('.pattern27');
+            let pattern28 = document.querySelector('.pattern28');
+            let pattern29 = document.querySelector('.pattern29');
+            let pattern30 = document.querySelector('.pattern30');
+
+            let n = 6; // Row & Column count
+            let m = 5; // Column count
+            let p = 3; // Column count
+            let q = 7;
+
+            // defining an empty string
+            let string1 = '';
+            let string2 = '';
+            let string3 = '';
+            let string4 = '';
+            let string5 = '';
+            let string6 = '';
+            let string7 = '';
+            let string8 = '';
+            let string9 = '';
+            let string10 = '';
+            let string11 = '';
+            let string12 = '';
+            let string13 = '';
+            let string14 = '';
+            let string15 = '';
+            let string16 = '';
+            let string17 = '';
+            let string18 = '';
+            let string19 = '';
+            let string20 = '';
+            let string21 = '';
+            let string22 = '';
+            let string23 = '';
+            let string24 = '';
+            let string25 = '';
+            let string26 = '';
+            let string27 = '';
+            let string28 = '';
+            let string29 = '';
+            let string30 = '';
+
+            // Two Format
+            
+            // first format
+            // for (let i = 0; i < n; i++) { // external loop
+            //     // printing star
+            //     for (let j = 0; j < n; j++) { // internal loop
+            //         string1 += '&nbsp; * &nbsp;';
+            //     }
+            //     string1 += '<br>'; // newline after each row
+            // }
+
+
+
+            // second format
+            // for (let i = 1; i <= n; i++) { // external loop
+            //     // printing star
+            //     for (let j = 1; j <= n; j++) { // internal loop
+            //         string1 += '&nbsp; * &nbsp;';
+            //     }
+            //     string1 += '<br>'; // newline after each row
+            // }
+
+
+
+
+            // outer loop - rows (same in almost every case)
+            // inner loop - columns (varies)
+
+
+            // Square (1 to n || 1 to n)
+            for (let i = 1; i <= n; i++) { // external loop
+                // printing star
+                for (let j = 1; j <= n; j++) { // internal loop
+                    string1 += '&nbsp; * &nbsp;';
+                }
+                string1 += '<br>'; // newline after each row
+            }
+            pattern1.innerHTML = string1;
+
+
+
+            // Hollow Square
+            for (let i = 1; i <= n; i++) {
+                // printing star
+                for (let j = 1; j <= n; j++) {
+                    if(i === 1 || i === n) {
+                        string2 += '&nbsp; * &nbsp;';
+                    }
+                    // else {
+                    //     if(j === 1 || j === n) {
+                    //         string2 += '&nbsp; * &nbsp;';
+                    //     }
+                    //     else {
+                    //         string2 += '&emsp;&ensp;';
+                    //     }
+                    // }
+                }
+                string2 += '<br>';
+            }
+            pattern2.innerHTML = string2;
+
+
+
+            // Rectangular
+            for (let i = 1; i <= m; i++) { // external loop
+                // printing star
+                for (let j = 1; j <= n; j++) { // internal loop
+                    string3 += '&nbsp; * &nbsp;';
+                }
+                string3 += '<br>'; // newline after each row
+            }
+            pattern3.innerHTML = string3;
+
+
+
+            // Hollow Rectangular
+            for (let i = 1; i <= m; i++) { // external loop
+                    // printing star
+                for (let j = 1; j <= n; j++) {
+                    if(i === 1 || i === m) {
+                        string4 += '&nbsp; * &nbsp;';
+                    }
+                    else {
+                        if(j === 1 || j === n) {
+                            string4 += '&nbsp; * &nbsp;';
+                        }
+                        else {
+                            string4 += '&emsp;&ensp;';
+                        }
+                    }
+                }
+                string4 += '<br>';
+            }
+            pattern4.innerHTML = string4;
+
+
+
+            // outer loop - rows (i) (same in almost every case)
+            // inner loop - columns (j/k) (varies)
+
+            // Inc Triangle  (1 to n || 1 to i)
+            for (let i = 1; i <= n; i++) {
+                // printing star
+                for (let j = 1; j <= i; j++) {
+                    string5 += "&nbsp; * &nbsp;";
+                }
+                string5 += "<br>";
+            }
+            pattern5.innerHTML = string5;
+
+
+
+            // Dec Triangle  (1 to n || i to n)
+            for (let i = 1; i <= n; i++) {
+                // printing star
+                for (let j = i; j <= n; j++) {
+                    string6 += "&nbsp; * &nbsp;";
+                }
+                string6 += "<br>";  // newline after each row
+            }
+            pattern6.innerHTML = string6;
+
+
+
+            // Right Triangle (1 to n || i to n || 1 to i)
+                // 2 triangle
+            // 1. Dec triangle of space 
+            // 2. Inc Triangle of star
+            for (let i = 1; i <= n; i++) {
+                // printing space
+                for (let j = i; j < n; j++) {
+                    string7 += "&nbsp; &ensp; &nbsp;";
+                }
+                // printing star
+                for (let k = 1; k <= i; k++) {
+                    string7 += "&nbsp; * &nbsp;";
+                }
+                string7 += "<br>";  // newline after each row
+            }
+            pattern7.innerHTML = string7;
+
+
+            // Left Triangle (1 to n || 1 to i || i to n)
+                // 2 triangle
+            // 1. Inc triangle of space 
+            // 2. Dec Triangle of star
+            for (let i = 1; i <= n; i++) {
+                // printing space
+                for (let j = 1; j < i; j++) {
+                    string8 += "&nbsp; &ensp; &nbsp;";
+                }
+                // printing star
+                for (let k = i; k <= n; k++) {
+                    string8 += "&nbsp; * &nbsp;";
+                }
+                string8 += "<br>";  // newline after each row
+            }
+            pattern8.innerHTML = string8;
+
+
+            // Upright Pyramid ()
+                // 3 triangle
+            // 1. 1 Dec triangle of space 
+            // 2. 2 Inc Triangle of star
+            for (let i = 1; i <= m; i++) {
+                // printing spaces
+                for (let j = i; j < m; j++) {
+                    string9 += "&nbsp;&ensp;&nbsp;";
+                }
+                // printing star
+                for (let k = 1; k < i; k++) {
+                    string9 += "&nbsp;*&nbsp;";
+                }
+                // printing star
+                for (let l = 1; l <= i; l++) {
+                    string9 += "&nbsp;*&nbsp;";
+                }
+                string9 += "<br>";
+            }
+            pattern9.innerHTML = string9;
+
+
+
+            // Inverted Pyramid ()
+                // 3 triangle
+            // 1. 1 Inc triangle of space 
+            // 2. 2 Dec Triangle of star
+            for (let i = 1; i <= m; i++) {
+                // printing spaces
+                for (let j = 1; j < i; j++) {
+                    string10 += "&nbsp;&ensp;&nbsp;";
+                }
+                // printing star
+                for (let k = i; k < m; k++) {
+                    string10 += "&nbsp;*&nbsp;";
+                }
+                // printing star
+                for (let l = i; l <= m; l++) {
+                    string10 += "&nbsp;*&nbsp;";
+                }
+                string10 += "<br>";
+            }
+            pattern10.innerHTML = string10;
+
+
+
+            // Diamond Shape
+                // Upright Pyramid ()
+                // Inverted Pyramid ()
+            for (let i = 1; i < m; i++) {
+                // printing spaces
+                for (let j = i; j < m; j++) {
+                    string11 += "&nbsp;&ensp;&nbsp;";
+                }
+                // printing star
+                for (let k = 1; k < i; k++) {
+                    string11 += "&nbsp;*&nbsp;";
+                }
+                // printing star
+                for (let l = 1; l <= i; l++) {
+                    string11 += "&nbsp;*&nbsp;";
+                }
+                string11 += "<br>";
+            }
+            for (let i = 1; i <= m; i++) {
+                // printing spaces
+                for (let j = 1; j < i; j++) {
+                    string11 += "&nbsp;&ensp;&nbsp;";
+                }
+                // printing star
+                for (let k = i; k < m; k++) {
+                    string11 += "&nbsp;*&nbsp;";
+                }
+                // printing star
+                for (let l = i; l <= m; l++) {
+                    string11 += "&nbsp;*&nbsp;";
+                }
+                string11 += "<br>";
+            }
+            pattern11.innerHTML = string11;
+
+
+
+            // Hour Glass Shape
+                // Inverted Pyramid ()
+                // Upright Pyramid ()
+            for (let i = 1; i < m; i++) {
+                // printing spaces
+                for (let j = 1; j < i; j++) {
+                    string12 += "&nbsp;&ensp;&nbsp;";
+                }
+                // printing star
+                for (let k = i; k < m; k++) {
+                    string12 += "&nbsp;*&nbsp;";
+                }
+                // printing star
+                for (let l = i; l <= m; l++) {
+                    string12 += "&nbsp;*&nbsp;";
+                }
+                string12 += "<br>";
+            }
+            for (let i = 1; i <= m; i++) {
+                // printing spaces
+                for (let j = i; j < m; j++) {
+                    string12 += "&nbsp;&ensp;&nbsp;";
+                }
+                // printing star
+                for (let k = 1; k < i; k++) {
+                    string12 += "&nbsp;*&nbsp;";
+                }
+                // printing star
+                for (let l = 1; l <= i; l++) {
+                    string12 += "&nbsp;*&nbsp;";
+                }
+                string12 += "<br>";
+            }
+            pattern12.innerHTML = string12;
+
+
+
+            // Left Pascal Triangle
+                // 2 triangle
+            // 1. 1 Inc Triangle of star
+            // 2. 1 Dec Triangle of star
+            for (let i = 1; i < n; i++) {
+                // printing star
+                for (let j = 1; j <= i; j++) {
+                    string13 += "&nbsp; * &nbsp;";
+                }
+                string13 += "<br>";
+            }
+            for (let i = 1; i <= n; i++) {
+                // printing star
+                for (let j = i; j <= n; j++) {
+                    string13 += "&nbsp; * &nbsp;";
+                }
+                string13 += "<br>";
+            }
+            pattern13.innerHTML = string13;
+
+
+            // Left Pascal Triangle
+                // 2 triangle
+            // 1. 1 Right Triangle of star
+            // 2. 1 Left Triangle of star
+            for (let i = 1; i < n; i++) {
+                // printing space
+                for (let j = i; j < n; j++) {
+                    string14 += "&nbsp; &ensp; &nbsp;";
+                }
+                // printing star
+                for (let k = 1; k <= i; k++) {
+                    string14 += "&nbsp; * &nbsp;";
+                }
+                string14 += "<br>";  // newline after each row
+            }
+            for (let i = 1; i <= n; i++) {
+                // printing space
+                for (let j = 1; j < i; j++) {
+                    string14 += "&nbsp; &ensp; &nbsp;";
+                }
+                // printing star
+                for (let k = i; k <= n; k++) {
+                    string14 += "&nbsp; * &nbsp;";
+                }
+                string14 += "<br>";  // newline after each row
+            }
+            pattern14.innerHTML = string14;
+
+
+
+            // Butterfly Pattern
+                // 2 Triangle
+            // 1. 1 Left Pascal Triangle of star
+            // 2. 2 Right Pascal Triangle of star
+            // for (let i = 1; i < p; i++) {
+            //     // priptipg star
+            //     for (let j = 1; j <= i; j++) {
+            //         string15 += "&nbsp; * &nbsp;";
+            //     }
+            //     string15 += "<br>";
+            // }
+            // for (let i = 1; i <= p; i++) {
+            //     // printing star
+            //     for (let j = i; j <= p; j++) {
+            //         string15 += "&nbsp; * &nbsp;";
+            //     }
+            //     string15 += "<br>";
+            // }
+            // for (let i = 1; i < p; i++) {
+            //     // printing space
+            //     for (let j = i; j < p; j++) {
+            //         string15 += "&nbsp; &ensp; &nbsp;";
+            //     }
+            //     // printing star
+            //     for (let k = 1; k <= i; k++) {
+            //         string15 += "&nbsp; * &nbsp;";
+            //     }
+            //     string15 += "<br>";  // newline after each row
+            // }
+            // for (let i = 1; i <= p; i++) {
+            //     // printing space
+            //     for (let j = 1; j < i; j++) {
+            //         string15 += "&nbsp; &ensp; &nbsp;";
+            //     }
+            //     // printing star
+            //     for (let k = i; k <= p; k++) {
+            //         string15 += "&nbsp; * &nbsp;";
+            //     }
+            //     string15 += "<br>";  // newline after each row
+            // }
+            // pattern15.innerHTML = string15;
+
+
+
+            // Butterfly Pattern
+                // 2 Triangle
+            // 1. 1 Left Pascal Triangle of star
+            // 2. 2 Right Pascal Triangle of star
+            for (let i = 1; i < m; i++) {
+                // printing star
+                for (let j = 1; j <= i; j++) {
+                    string15 += "&nbsp;*&nbsp;";
+                }
+                // printing space
+                for (let k = i; k < m; k++) {
+                    string15 += "&nbsp;&ensp;";
+                }
+                // printing space
+                for (let j = i; j < m; j++) {
+                    string15 += "&ensp;&ensp;";
+                }
+                // printing star
+                for (let k = 1; k <= i; k++) {
+                    string15 += "&nbsp;*&nbsp;";
+                }
+                string15 += "<br>";
+            }
+            for (let i = 1; i <= m; i++) {
+                // printing star
+                for (let j = i; j <= m; j++) {
+                    string15 += "&nbsp;*&nbsp;";
+                }
+                // printing space
+                for (let k = 1; k < i; k++) {
+                    string15 += "&nbsp;&ensp;";
+                }
+                // printing space
+                for (let j = 1; j < i; j++) {
+                    string15 += "&ensp;&ensp;";
+                }
+                // printing star
+                for (let k = i; k <= m; k++) {
+                    string15 += "&nbsp;*&nbsp;";
+                }
+                string15 += "<br>";
+            }
+            pattern15.innerHTML = string15;
+
+
+
+            // star pattern
+            
+
+
+
+
+            // double upright pyramid
+            for (let i = 1; i <= m; i++) {
+                // printing spaces
+                for (let j = i; j < m; j++) {
+                    string17 += "&nbsp;&ensp;&nbsp;";
+                }
+                // printing star
+                for (let k = 1; k < i; k++) {
+                    string17 += "&nbsp;*&nbsp;";
+                }
+                // printing star
+                for (let l = 1; l <= i; l++) {
+                    string17 += "&nbsp;*&nbsp;";
+                }
+                string17 += "<br>";
+            }
+            for (let i = 1; i <= m; i++) {
+                // printing spaces
+                for (let j = i; j < m; j++) {
+                    string17 += "&nbsp;&ensp;&nbsp;";
+                }
+                // printing star
+                for (let k = 1; k < i; k++) {
+                    string17 += "&nbsp;*&nbsp;";
+                }
+                // printing star
+                for (let l = 1; l <= i; l++) {
+                    string17 += "&nbsp;*&nbsp;";
+                }
+                string17 += "<br>";
+            }
+            pattern17.innerHTML = string17;
+
+
+
+            // double inverted
+            for (let i = 1; i <= m; i++) {
+                // printing spaces
+                for (let j = 1; j < i; j++) {
+                    string18 += "&nbsp;&ensp;&nbsp;";
+                }
+                // printing star
+                for (let k = i; k < m; k++) {
+                    string18 += "&nbsp;*&nbsp;";
+                }
+                // printing star
+                for (let l = i; l <= m; l++) {
+                    string18 += "&nbsp;*&nbsp;";
+                }
+                string18 += "<br>";
+            }
+            for (let i = 1; i <= m; i++) {
+                // printing spaces
+                for (let j = 1; j < i; j++) {
+                    string18 += "&nbsp;&ensp;&nbsp;";
+                }
+                // printing star
+                for (let k = i; k < m; k++) {
+                    string18 += "&nbsp;*&nbsp;";
+                }
+                // printing star
+                for (let l = i; l <= m; l++) {
+                    string18 += "&nbsp;*&nbsp;";
+                }
+                string18 += "<br>";
+            }
+            pattern18.innerHTML = string18;
+
+
+
+            // pattern one
+            for (let i = 1; i <= m; i++) {
+                // printing star
+                for (let j = 1; j <= i; j++) {
+                    string19 += "&nbsp;*&nbsp;";
+                }
+                // printing space
+                for (let k = i; k < m; k++) {
+                    string19 += "&nbsp;&ensp;";
+                }
+                // printing space
+                for (let j = i; j < m; j++) {
+                    string19 += "&ensp;&ensp;";
+                }
+                // printing star
+                for (let k = 1; k <= i; k++) {
+                    string19 += "&nbsp;*&nbsp;";
+                }
+                string19 += "<br>";
+            }
+            pattern19.innerHTML = string19;
+
+
+
+            // pattern two
+            for (let i = 1; i <= m; i++) {
+                // printing star
+                for (let j = i; j <= m; j++) {
+                    string20 += "&nbsp;*&nbsp;";
+                }
+                // printing space
+                for (let k = 1; k < i; k++) {
+                    string20 += "&nbsp;&ensp;";
+                }
+                // printing space
+                for (let j = 1; j < i; j++) {
+                    string20 += "&ensp;&ensp;";
+                }
+                // printing star
+                for (let k = i; k <= m; k++) {
+                    string20 += "&nbsp;*&nbsp;";
+                }
+                string20 += "<br>";
+            }
+            pattern20.innerHTML = string20;
+
+
+
+
+            // pattern 1
+            for (let i = 1; i < n; i++) {
+                // printing star
+                for (let j = 1; j <= i; j++) {
+                    string21 += "&nbsp; * &nbsp;";
+                }
+                string21 += "<br>";
+            }
+            for (let i = 1; i <= n; i++) {
+                // printing space
+                for (let j = 1; j < i; j++) {
+                    string21 += "&nbsp; &ensp; &nbsp;";
+                }
+                // printing star
+                for (let k = i; k <= n; k++) {
+                    string21 += "&nbsp; * &nbsp;";
+                }
+                string21 += "<br>";  // newline after each row
+            }
+            pattern21.innerHTML = string21;
+
+
+
+            // pattern 2
+            for (let i = 1; i < n; i++) {
+                // printing space
+                for (let j = i; j < n; j++) {
+                    string22 += "&nbsp; &ensp; &nbsp;";
+                }
+                // printing star
+                for (let k = 1; k <= i; k++) {
+                    string22 += "&nbsp; * &nbsp;";
+                }
+                string22 += "<br>";  // newline after each row
+            }
+            for (let i = 1; i <= n; i++) {
+                // printing star
+                for (let j = i; j <= n; j++) {
+                    string22 += "&nbsp; * &nbsp;";
+                }
+                string22 += "<br>";
+            }
+            pattern22.innerHTML = string22;
+
+
+
+            // pattern 3
+            for (let i = 1; i < n; i++) {
+                // printing star
+                for (let k = i; k <= n; k++) {
+                    string23 += "&nbsp; * &nbsp;";
+                }
+                string23 += "<br>";  // newline after each row
+            }
+            for (let i = 1; i <= n; i++) {
+                // printing star
+                for (let j = 1; j <= i; j++) {
+                    string23 += "&nbsp; * &nbsp;";
+                }
+                string23 += "<br>";
+            }
+            pattern23.innerHTML = string23;
+
+
+
+
+            // pattern 4
+            for (let i = 1; i < n; i++) {
+                // printing space
+                for (let j = 1; j < i; j++) {
+                    string24 += "&nbsp; &ensp; &nbsp;";
+                }
+                // printing star
+                for (let k = i; k <= n; k++) {
+                    string24 += "&nbsp; * &nbsp;";
+                }
+                string24 += "<br>";  // newline after each row
+            }
+            for (let i = 1; i <= n; i++) {
+                // printing space
+                for (let j = i; j < n; j++) {
+                    string24 += "&nbsp; &ensp; &nbsp;";
+                }
+                // printing star
+                for (let k = 1; k <= i; k++) {
+                    string24 += "&nbsp; * &nbsp;";
+                }
+                string24 += "<br>";  // newline after each row
+            }
+            pattern24.innerHTML = string24;
+        </script>
+    </body>
+</html>
+
+
+
+
